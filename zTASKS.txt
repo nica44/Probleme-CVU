@@ -1,0 +1,43 @@
+﻿1.In metoda de intrare in program:
+instantiaza o lista de producatori, fiecare cu o lista de reduceri cu diferite perioade (considera si perioade fara unul din capete - doar start sau stop)
+instantiaza un catalog (refoloseste producatori din lista creeata anterior)
+stabileste cursul valutar din clasa Pret la cursul actual pentru cele 3 monede
+instantiaza o lista de clienti (proprietatea ProduseFavorite trebuie sa contina id-uri care se pot regasi in catalog sau nu)
+atentie: sunt recomandate listele de intializare pana si pentru reduceri care pot fi date ca liste de expresii lambda
+
+2.In clasa Pret adauga 2 evenimente 
+eveniment la care se pot intregistra subscriberi ce vor primi atunci cand se schimba pretul, vechiul pret si noul pret
+eveniment la care se pot intregistra subscriberi ce vor primi atunci cand se schimba stoc-ul,vechiul stoc si noul stoc
+
+3.Scrie urmatoarele metode pentru clasa Catalog:
+o metoda publica prin care clientii se pot abona la respectiv-ul catalog
+atunci cand se aboneaza un client la catalog trebuie legat direct la evenimentul de schimbare a pretului pentru produsele care-l intereseaza printr-o expresie lambda intermediara care genereaza un mesaj de forma "Pret-ul produsului <x> s-a schimbat de la <y> <moneda> la <z> <moneda>" (in functie de moneda clientului) si il trimite clientului
+o metoda publica prin care clientii se pot dezabona de la respectivul catalog (in cazul in care un client se dezaboneaza si nu se regaseste in lista de abonati, o exceptie trebuie aruncata)
+atunci cand un client se dezaboneaza trebuie scos de la notificari
+o metoda privata care este apelata cand se modifica stocul unui produs si notifica Clientii (daca poate daca nu trebuie sa prinda exceptia si sa treaca la urmatorul client) abonati prin metoda corespunzatoare cu  mesajul "Produsul <x> este din nou in stoc!" in urmatoarele conditii:
+daca stoc-ul este pe 0 si devine mai mare ca 0
+daca id-ul produsului se regaseste printre favoritele clientului
+atentie: este o diferenta intre punctul a. si c. (extra: http://www.dofactory.com/net/observer-design-pattern)
+
+4.Scrie o extensie pentru DateTime care permite sa verifici daca data se incadreaza intr-un range (2 DateTime-uri).
+
+5.In clasa Catalog scrie o metoda privata AplicaReduceriProducator care:
+itereaza prin lista de produse si pentru fiecare produs aplica toate reducerile producatorului care se incadreaza in perioada catalogului
+indifierent de aplicarea sau nu a reducerii, produs-ul trebuie intors ca urmatorul element din iterator si d-abia dupa trebuie facuta trecerea la urmatoarea iteratie (hint: exista un keyword dedicat, metoda se va folosi impreuna cu metoda urmatoare si vrem sa sincronizam iteratiile astfel incat pentru fiecare produs sa aplicam mai intai reducerile producatorului dupa care reducerile vanzatorului inainte de a trece la urmatorul produs)
+
+6. In clasa Catalog scrie o metoda AplicaReduceri care primeste optional un delegat generic ce permite selectarea unei reduceri din cele disponibile in catalog si trebuie sa faca urmatoarele:
+daca este specificat un delegat trebuie obtinuta reducerea specificata prin invocarea delegatului, altfel vom lua in calcul toate reducerile vanzatorului
+apeleaza metoda AplicaReduceriProducator iar pe colectia intoarsa, pentru fiecare element aplica reducerea sau reducerile vanzatorului in functie de ce s-a intamplat la pasul .a
+pentru produsele cu stoc-ul 0 si pretul redus sub 10 euro stocul va fi incrementat cu 100 de bucati
+
+7. In metoda de intrare in program apeleaza metoda AplicaReduceri fara parametru cand aplicatia e compilata pentru deploy si cu o reducere selectata cand aplicatia e compilata pentru debug.
+
+8. Daca delegatul "Aplica" pentru o reducere ar avea un parametru optional decorat cu [CallerMemberName] ce valoare ar avea acesta la apelul metodei AplicaReduceri?
+
+9. Itereaza pe lista de client si afiseaza informatii despre fiecare in felul urmator:
+Email: <email client>
+Produse: <nume produs 1>, <nume produs 2> etc
+Inbox:
+<mesaj 1>
+<mesaj 2>
+etc. 

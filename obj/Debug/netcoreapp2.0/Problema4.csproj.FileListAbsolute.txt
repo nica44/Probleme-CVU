@@ -1,0 +1,11 @@
+C:\Users\ionut\Documents\Probleme CVU\Problema4\bin\Debug\netcoreapp2.0\Problema4.deps.json
+C:\Users\ionut\Documents\Probleme CVU\Problema4\bin\Debug\netcoreapp2.0\Problema4.runtimeconfig.json
+C:\Users\ionut\Documents\Probleme CVU\Problema4\bin\Debug\netcoreapp2.0\Problema4.runtimeconfig.dev.json
+C:\Users\ionut\Documents\Probleme CVU\Problema4\bin\Debug\netcoreapp2.0\Problema4.dll
+C:\Users\ionut\Documents\Probleme CVU\Problema4\bin\Debug\netcoreapp2.0\Problema4.pdb
+C:\Users\ionut\Documents\Probleme CVU\Problema4\obj\Debug\netcoreapp2.0\Problema4.csprojResolveAssemblyReference.cache
+C:\Users\ionut\Documents\Probleme CVU\Problema4\obj\Debug\netcoreapp2.0\Problema4.csproj.CoreCompileInputs.cache
+C:\Users\ionut\Documents\Probleme CVU\Problema4\obj\Debug\netcoreapp2.0\Problema4.AssemblyInfoInputs.cache
+C:\Users\ionut\Documents\Probleme CVU\Problema4\obj\Debug\netcoreapp2.0\Problema4.AssemblyInfo.cs
+C:\Users\ionut\Documents\Probleme CVU\Problema4\obj\Debug\netcoreapp2.0\Problema4.dll
+C:\Users\ionut\Documents\Probleme CVU\Problema4\obj\Debug\netcoreapp2.0\Problema4.pdb
