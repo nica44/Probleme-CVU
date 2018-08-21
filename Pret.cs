@@ -59,4 +59,8 @@ public class Pret
             PriceChanged(Valoare, value);
         }
     }
+    public void functietest()
+    {
+
+    }
 }
